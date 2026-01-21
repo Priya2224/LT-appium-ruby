@@ -1,0 +1,34 @@
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  RUBY_VERSION: '3.0'
+
+steps:
+- checkout: self
+
+# Install Ruby
+- task: UseRubyVersion@0
+  inputs:
+    versionSpec: '$(RUBY_VERSION)'
+    addToPath: true
+
+# Install dependencies
+- script: |
+    gem install bundler
+    bundle install
+  displayName: 'Install Ruby dependencies'
+
+# Set LambdaTest environment variables
+- script: |
+    echo "##vso[task.setvariable variable=LT_USERNAME]$(LT_USERNAME)"
+    echo "##vso[task.setvariable variable=LT_ACCESS_KEY]$(LT_ACCESS_KEY)"
+  displayName: 'Set LambdaTest credentials'
+
+# Run Android tests
+- script: |
+    ruby android/android.rb
+  displayName: 'Run Appium Android tests'
