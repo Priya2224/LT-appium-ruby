@@ -47,17 +47,19 @@ Before you can start performing Ruby automation testing with Appium, you would n
    git clone [https://github.com/Priya2224/LT-appium-ruby.git](https://github.com/Priya2224/LT-appium-ruby.git)
    cd LT-appium-ruby
 
+## Setting Up Your Authentication
 
-Setting Up Your Authentication
 Make sure you have your LambdaTest credentials with you to run test automation scripts. To obtain your access credentials, purchase a plan or access the Automation Dashboard.
 
 Set LambdaTest Username and Access Key in environment variables.
 
-For Linux/macOS:
-export LT_USERNAME=YOUR_LAMBDATEST_USERNAME \
+1. **For Linux/macOS**:
+```bash
+export LT_USERNAME=YOUR_LAMBDATEST_USERNAME
 export LT_ACCESS_KEY=YOUR_LAMBDATEST_ACCESS_KEY
 
-For Windows:
+2. **For Windows**:
+```bash
 set LT_USERNAME=YOUR_LAMBDATEST_USERNAME
 set LT_ACCESS_KEY=YOUR_LAMBDATEST_ACCESS_KEY
 
