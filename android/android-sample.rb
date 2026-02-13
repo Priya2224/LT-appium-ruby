@@ -6,9 +6,9 @@ accessToken= ENV["LT_ACCESS_KEY"] || "LT_AccessKey" # Enter your Access Key here
 
 caps = {
     "lt:options" => {
-        :deviceName => "Pixel 6",
+        :deviceName => "Galaxy S24",
         :platformName => "Android",
-        :platformVersion => "13",
+        :platformVersion => "14",
         :build => "Ruby Vanilla - Android",
         :name => "Ruby Android Test",
         :isRealMobile => true,
